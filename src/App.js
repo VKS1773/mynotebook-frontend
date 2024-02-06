@@ -1,3 +1,4 @@
+// import dotenv from "dotenv";
 import React, { useState } from "react";
 import "./App.css";
 import Notestate from "./Context/Notes/Notestate";
@@ -9,6 +10,7 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
+// dotenv.config("./.env");
 function App() {
   const [alert, setalert] = useState(null);
   const showalert = (message, type) => {

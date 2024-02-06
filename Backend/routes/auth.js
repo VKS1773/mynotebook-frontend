@@ -6,7 +6,7 @@ const { body, validationResult } = require("express-validator");
 var fetchuser = require("../middleware/fetchuser");
 var jwt = require("jsonwebtoken");
 
-const JWT_SECRET = "youaredoinggood";
+const JWT_SECRET = process.env.REACT_APP_JWT__SECRET;
 
 //create user using :post '/api/auth/creatuser' no login required
 router.post(
@@ -82,22 +82,18 @@ router.post(
       let user = await User.findOne({ email });
       if (!user) {
         success = false;
-        return res
-          .status(400)
-          .json({
-            success,
-            errors: "please try to login with correct credentials",
-          });
+        return res.status(400).json({
+          success,
+          errors: "please try to login with correct credentials",
+        });
       }
       const passwordcompare = await bcrypt.compare(password, user.password);
       if (!passwordcompare) {
         success = false;
-        return res
-          .status(400)
-          .json({
-            success,
-            errors: "please try to login with correct credentials",
-          });
+        return res.status(400).json({
+          success,
+          errors: "please try to login with correct credentials",
+        });
       }
       const data = {
         user: {

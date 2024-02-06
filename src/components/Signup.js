@@ -14,18 +14,21 @@ const Signup = (props) => {
   };
   const handleclick = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/auth/createuser", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+    const response = await fetch(
+      `${process.env.REACT_APP_DATABASE_URL}/api/auth/createuser`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
 
-      body: JSON.stringify({
-        name: userData.name,
-        email: userData.email,
-        password: userData.password,
-      }),
-    });
+        body: JSON.stringify({
+          name: userData.name,
+          email: userData.email,
+          password: userData.password,
+        }),
+      }
+    );
     const note = await response.json();
     if (note.success) {
       ///save authtoken and redirect to home

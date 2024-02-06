@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const mongoURL = "mongodb://127.0.0.1:27017/Mynotebook";
+const mongoURL = process.env.REACT_APP_MONGODB_URL;
 const connectToMongo = () => {
   mongoose.set("strictQuery", true);
   mongoose.connect(mongoURL, (err) => {
