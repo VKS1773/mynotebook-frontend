@@ -102,6 +102,7 @@ const Notestate = (props) => {
     );
     const json = await response.json();
     console.log(json);
+    console.log("I am called");
     const newNote = JSON.parse(JSON.stringify(notes));
     //edit logic
     for (let index = 0; index < newNote.length; index++) {

@@ -9,6 +9,7 @@ const About = () => {
   //     a.update();
   //     //eslint-disable-next-line
   // },[])
+
   return (
     // <div>This is about {a.state.name} and he is in class {a.state.class}</div>
     <>
@@ -21,11 +22,11 @@ const About = () => {
       >
         <h2
           className="mb-4"
-          style={{ "padding-left": "100px", paddingTop: "25px" }}
+          style={{ paddingLeft: "100px", paddingTop: "25px" }}
         >
           About us
         </h2>
-        <div style={{ "padding-left": "100px", "padding-right": "100px" }}>
+        <div style={{ paddingLeft: "100px", paddingRight: "100px" }}>
           <h5>
             Welcome to our personal notes management project! This project is
             designed to provide you with a convenient platform to manage your

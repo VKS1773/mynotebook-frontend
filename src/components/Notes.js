@@ -39,6 +39,7 @@ const Notes = (props) => {
     refClose.current.click();
     props.showalert("Notes Updated succesfully", "success");
   };
+
   const onChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
   };
@@ -50,8 +51,8 @@ const Notes = (props) => {
         ref={ref}
         type="button"
         className="btn btn-primary d-none"
-        data-toggle="modal"
-        data-target="#exampleModal"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
       >
         Launch demo modal
       </button>
@@ -72,11 +73,11 @@ const Notes = (props) => {
               </h5>
               <button
                 type="button"
-                className="close"
+                className="btn-close"
                 data-dismiss="modal"
                 aria-label="Close"
               >
-                <span aria-hidden="true">&times;</span>
+                {/* <span aria-hidden="true">&times;</span> */}
               </button>
             </div>
             <div className="modal-body">
@@ -122,6 +123,7 @@ const Notes = (props) => {
                 <div className="form-check"></div>
               </form>
             </div>
+
             <div className="modal-footer">
               <button
                 type="button"
