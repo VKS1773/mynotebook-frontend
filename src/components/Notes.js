@@ -50,37 +50,37 @@ const Notes = (props) => {
       <button
         ref={ref}
         type="button"
-        className="btn btn-primary d-none"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
+        class="btn btn-primary d-none"
+        data-toggle="modal"
+        data-target="#exampleModal"
       >
         Launch demo modal
       </button>
 
       <div
-        className="modal fade"
+        class="modal fade"
         id="exampleModal"
-        tabIndex="-1"
+        tabindex="-1"
         role="dialog"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div className="modal-dialog" role="document">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
                 Edit Note
               </h5>
               <button
                 type="button"
-                className="btn-close"
+                class="close"
                 data-dismiss="modal"
                 aria-label="Close"
               >
-                {/* <span aria-hidden="true">&times;</span> */}
+                <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div className="modal-body">
+            <div class="modal-body">
               <form>
                 <div className="form-group">
                   <label htmlFor="title">Title</label>
@@ -123,20 +123,19 @@ const Notes = (props) => {
                 <div className="form-check"></div>
               </form>
             </div>
-
-            <div className="modal-footer">
+            <div class="modal-footer">
               <button
+                ref={refClose}
                 type="button"
                 className="btn btn-secondary"
                 data-dismiss="modal"
-                ref={refClose}
               >
                 Close
               </button>
               <button
                 onClick={handleOnclick}
                 type="button"
-                className="btn btn-primary"
+                class="btn btn-primary"
                 disabled={
                   note.etitle.length < 3 || note.edescription.length < 5
                 }
