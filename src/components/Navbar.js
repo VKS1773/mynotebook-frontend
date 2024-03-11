@@ -16,35 +16,20 @@ const Navbar = () => {
           <Link className="navbar-brand" href="/">
             MyNoteBook
           </Link>
-          {/* <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            data-target="#navbarSupportedContent"
-          >
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-          </button> */}
-          <div class="dropdown">
+          <div className="dropdown">
             <button
-              class="btn btn-secondary dropdown-toggle"
+              className="navbar-toggler"
               type="button"
               id="dropdownMenuButton"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-              className="navbar-toggler"
             >
               Login/signup
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <Link
-                class={`dropdown-item ${
+                className={`dropdown-item ${
                   location.pathname === "/login" ? "active" : ""
                 }`}
                 to="/login"
@@ -52,7 +37,7 @@ const Navbar = () => {
                 Login
               </Link>
               <Link
-                class={`dropdown-item ${
+                className={`dropdown-item ${
                   location.pathname === "/signup" ? "active" : ""
                 }`}
                 to="/signup"
@@ -61,7 +46,7 @@ const Navbar = () => {
               </Link>
               <Link
                 onClick={handleclick}
-                class={`dropdown-item ${
+                className={`dropdown-item ${
                   location.pathname === "/logout" ? "active" : ""
                 }`}
                 to="/login"
@@ -130,50 +115,3 @@ const Navbar = () => {
   );
 };
 export default Navbar;
-
-/* <div class="dropdown">
-            <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              className="navbar-toggler"
-            >
-              Login/signup
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <Link
-                class={`dropdown-item ${
-                  location.pathname == "/login" ? "active" : ""
-                }`}
-                to="/login"
-              >
-                Login
-              </Link>
-              <Link
-                class={`dropdown-item ${
-                  location.pathname == "/signup" ? "active" : ""
-                }`}
-                to="/signup"
-              >
-                SignUp
-              </Link>
-              <Link
-                onClick={handleclick}
-                class={`dropdown-item ${
-                  location.pathname == "/logout" ? "active" : ""
-                }`}
-                to="/login"
-              >
-                LogOut
-              </Link>
-              <Link className="dropdown-item" to="/">
-                Home
-              </Link>
-              <Link className="dropdown-item" to="/about">
-                About
-              </Link>
-            </div>
-          </div> */
