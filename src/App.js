@@ -1,4 +1,3 @@
-// import dotenv from "dotenv";
 import React, { useState } from "react";
 import "./App.css";
 import Notestate from "./Context/Notes/Notestate";

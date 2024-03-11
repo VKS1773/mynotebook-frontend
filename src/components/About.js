@@ -1,20 +1,8 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-// import React, { useEffect,useContext } from 'react'
-// import noteContext from '../context/notes/noteContext'
 const About = () => {
-  // const a=useContext(noteContext)
-  // useEffect(()=>{
-  //     a.update();
-  //     //eslint-disable-next-line
-  // },[])
-  const ref = useRef();
-  const handle = () => {
-    ref.current.click();
-  };
   return (
-    // <div>This is about {a.state.name} and he is in class {a.state.class}</div>
     <>
       <div
         style={{
@@ -53,57 +41,6 @@ const About = () => {
           </h5>
           <div className="container aboutcontainer">
             <Link to="/">Create New Note</Link>
-          </div>
-        </div>
-      </div>
-
-      <button
-        ref={ref}
-        type="button"
-        class="btn btn-primary"
-        data-toggle="modal"
-        data-target="#exampleModal"
-        onClick={handle}
-      >
-        Launch demo modal
-      </button>
-
-      <div
-        class="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
-                Modal title
-              </h5>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">...</div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" class="btn btn-primary">
-                Save changes
-              </button>
-            </div>
           </div>
         </div>
       </div>
