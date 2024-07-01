@@ -19,8 +19,9 @@ const Notestate = (props) => {
   //get all notes
   const getNotes = async () => {
     //TODO:api call
+    //http://localhost:5000/api/notes/
     const response = await fetch(
-      `http://localhost:5000/api/notes/fetchallnotes`,
+      `https://mynotebook-antt.onrender.com/api/notes/fetchallnotes`,
       {
         method: "GET",
         headers: {
@@ -37,19 +38,22 @@ const Notestate = (props) => {
 
   const addNote = async (title, description, tag) => {
     //TODO:api call
-    const response = await fetch(`http://localhost:5000/api/notes/addnote`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "auth-token": localStorage.getItem("token"),
-      },
+    const response = await fetch(
+      `https://mynotebook-antt.onrender.com/api/notes/addnote`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("token"),
+        },
 
-      body: JSON.stringify({
-        title: title,
-        description: description,
-        tag: tag,
-      }),
-    });
+        body: JSON.stringify({
+          title: title,
+          description: description,
+          tag: tag,
+        }),
+      }
+    );
     const note = await response.json();
     setNotes(notes.concat(note));
   };
@@ -58,7 +62,7 @@ const Notestate = (props) => {
   const deleteNote = async (id) => {
     //apic all
     const response = await fetch(
-      `http://localhost:5000/api/notes/deletenote/${id}`,
+      `https://mynotebook-antt.onrender.com/api/notes/deletenote/${id}`,
       {
         method: "DELETE",
         headers: {
@@ -86,7 +90,7 @@ const Notestate = (props) => {
   const updateNote = async (id, title, description, tag) => {
     //api call
     const response = await fetch(
-      `http://localhost:5000/api/notes/updatenote/${id}`,
+      `https://mynotebook-antt.onrender.com/api/notes/updatenote/${id}`,
       {
         method: "PUT",
         headers: {
